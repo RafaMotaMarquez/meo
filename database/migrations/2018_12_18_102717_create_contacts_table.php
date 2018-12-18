@@ -16,6 +16,7 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('contact_type');
+            $table->datetime('meeting_date');
             $table->string('photo')->default();
             $table->boolean('gender');
             $table->string('last_name')->default();
@@ -26,6 +27,7 @@ class CreateContactsTable extends Migration
             $table->text('city');
             $table->text('country');
             $table->text('contact_note')->nullable();
+            $table->boolean('join_newsletter');
             $table->timestamps();
         });
     }
