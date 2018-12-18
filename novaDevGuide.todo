@@ -1,0 +1,39 @@
+Installation:
+  ☐ Download it, unzip it, rename it and paste at the laravel root project.
+  ☐ Add the nova directory on the git.ignore
+  ☐ composer.json file add a new parameter call repositories like so :
+        "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type":"path",
+            "url":"./nova"
+        }
+    ],
+  ☐ Require the nova dependency like so :
+      "require": {
+        "php": "^7.1.3",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "5.7.*",
+        "laravel/tinker": "^1.0",
+        "laravel/nova": "*"
+    },
+  ☐ Run composer update
+  ☐ php artisan nova:install
+  ☐ Add manually the Service provider class like so :
+   App\Providers\NovaServiceProvider::class,
+  ☐ Modify the .env file
+  ☐ Run php artisan migrate
+  ☐ Register a new user from CLI like so :
+    php artisan nova:user
+    rafa
+    rafa@gmail.com
+    pass1234
+   ☐ php artisan serve
+   ☐ Visit the localhost:8000/nova
+   ☐ Login  with the credentials
+
+Adding resources:
