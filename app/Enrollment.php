@@ -17,4 +17,8 @@ class Enrollment extends Model
     {
     	return $this->belongsTo(Contact::class);
     }
+    public function teacher () 
+    {
+    	return $this->belongsTo(Teacher::class);
+    }
 }
