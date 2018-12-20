@@ -17,16 +17,18 @@ class CreateEnrollmentsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('contact_id');
             $table->unsignedInteger('teacher_id');
+            $table->unsignedInteger('funder_id');
+            $table->string('enrollment_type');
             $table->string('title');
-            $table->text('body');
             $table->date('starting_date');
             $table->date('ending_date');
             $table->decimal('price');
-            $table->string('funding_body');
             $table->string('course_language');
             $table->string('course_level');
             $table->decimal('course_duration');
-            // $table->unsignedInteger('attendance_id');
+            $table->text('course_quote')->nullable();
+            $table->text('course_contract')->nullable();
+            $table->text('course_agreement')->nullable();
             $table->timestamps();
         });
     }

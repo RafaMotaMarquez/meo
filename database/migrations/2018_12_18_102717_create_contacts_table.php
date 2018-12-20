@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('contact_type');
             $table->datetime('meeting_date');
             $table->string('photo')->default();
-            $table->boolean('gender');
+            $table->string('gender');
             $table->string('last_name')->default();
             $table->string('first_name');
             $table->string('email')->unique();
@@ -27,7 +27,6 @@ class CreateContactsTable extends Migration
             $table->text('city');
             $table->text('country');
             $table->text('contact_note')->nullable();
-            $table->boolean('join_newsletter');
             $table->timestamps();
         });
     }
